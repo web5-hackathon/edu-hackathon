@@ -1,0 +1,23 @@
+{
+  "cli": {
+    "version": ">= 10.2.2"
+  },
+  "build": {
+    "development": {
+      "bun": "1.1.21",
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "bun": "1.1.21",
+      "distribution": "internal"
+    },
+    "production": {
+      "bun": "1.1.21",
+      "distribution": "internal"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

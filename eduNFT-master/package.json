@@ -1,0 +1,41 @@
+{
+  "name": "certificate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/swc-win32-x64-msvc": "^15.0.0-rc.0",
+    "@opencampus/ocid-connect-js": "^1.0.1",
+    "@rainbow-me/rainbowkit": "^2.1.5",
+    "@tanstack/react-query": "^5.52.1",
+    "axios": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.33.0",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "viem": "2.x",
+    "wagmi": "^2.12.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.24.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
