@@ -4,7 +4,7 @@ require("@nomicfoundation/hardhat-toolbox");
 let dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
 
-const privatekey = process.env.PRIVATEKEY;
+const privatekey = process.env.SEPOLIA_PRIVATE_KEY;
 
 module.exports = {
   solidity: "0.8.22",
@@ -21,6 +21,11 @@ module.exports = {
       url: "https://lb.drpc.org/ogrpc?network=open-campus-codex-sepolia&dkey=Ak0AqOiweUGkrAgyZ9IqJ4P_Er-6Y60R74IerifuQQh_",
       accounts: [privatekey],
       chainId: 656476,
-    }
+    },
+    sepolia: {
+      url: process.env.ALCHEMY_API_URL,
+      accounts: [process.env.SEPOLIA_PRIVATE_KEY || ""]
+    },
+
   }
 };

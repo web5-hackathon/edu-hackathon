@@ -17,13 +17,9 @@ contract CourseCertificate is ERC721URIStorage {
     mapping(address => string) internal s_studentToCertificate;
     uint256 private _tokenIds; // Manual counter for token IDs
 
-    struct Certificate {
-        string s_courseName;
-        string ocid;
-    }
     // Events:
     event CertificateIssued(address student);
-    event CertificateMinted(address student, uint256 tokenId, Certificate certificate);
+    event CertificateMinted(address student, uint256 tokenId, string tokenURI);
 
     modifier onlyOwner() {
         if (msg.sender != _owner) {
@@ -64,11 +60,7 @@ contract CourseCertificate is ERC721URIStorage {
         s_issuedCertificates[msg.sender] = false;
         s_studentToCertificate[msg.sender] = tokenURI;
         s_courseName = getCourseName();
-        Certificate memory certificate = Certificate({
-            s_courseName: s_courseName,
-            ocid: ocid
-        });
-        emit CertificateMinted(msg.sender, newItemId, certificate);
+        emit CertificateMinted(msg.sender, newItemId, tokenURI);
 
         return newItemId;
     }
@@ -77,7 +69,6 @@ contract CourseCertificate is ERC721URIStorage {
         bytes memory dataURI = abi.encodePacked(
             '{',
                 '"name": "', s_courseName, ' Certificate #', tokenId.toString(), '",',
-                '"image": "https://example.com/image.png",',
                 '"description": "Certificate for completing the course",',
                 '"attributes": [',
                     '{',

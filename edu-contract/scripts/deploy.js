@@ -5,7 +5,7 @@ let courseCertificate;
 async function main() {
 
   const CourseCertificate = await ethers.getContractFactory("CourseCertificate");
-  courseCertificate = await CourseCertificate.deploy("Web3");
+  courseCertificate = await CourseCertificate.deploy("EDU");
   await courseCertificate.deployed();
   console.log("courseCertificate:" + courseCertificate.address);
 
