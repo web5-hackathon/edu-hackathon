@@ -4,19 +4,21 @@
 
 ## Get started
 
-1. 安装依赖（更新会导致构建失败）
+1. Install dependencies (updates may cause build failures)
+
 
    ```bash
    bun install   
    ```
 
-2. 预编译程序(因为用到了原生组件)
+2. Precompile the program (since native components are used)
+
+
    ```bash
    bun expo prebuild
    ```
 
-3. 构建配置文件修改：
-   请在`android/gradle.properties`和`android/gradle/wrapper/gradle-wrapper.properties`中新增一行（防止部分依赖安装失败）：
+3. Modify build configuration files: Add the following line in android/gradle.properties and android/gradle/wrapper/gradle-wrapper.properties (to prevent certain dependencies from failing to install)：
    ```
    https.protocols=TLSv1.1,TLSv1.2,TLSv1.3
    ```
@@ -25,17 +27,21 @@
    https://services.gradle.org/distributions/gradle-8.5-all.zip
    ```
 
-4. 启动程序
+4. Start the program
+
    ```bash
     bun expo start
    ```
-   按下 `s` 键切换到 **development build** 模式。
 
-   再按下 `a` 键，以在模拟器中启动。
+   Press s to switch to development build mode.
 
-## 如何打包
+   Then press a to launch the app in the emulator.
 
-请将该项目链接至自己的Expo账号，然后使用命令行打包：
+
+
+## How to Build
+
+Link this project to your own Expo account, then use the command line to build：
 
 ```
 eas build -p android
